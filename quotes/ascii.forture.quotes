@@ -1,0 +1,110 @@
+A computer language that supports Extended ASCII can also support UTF-8 without any changes, this was a major factor in UTF-8's popularity.
+%
+ASCII art is a graphic design technique that uses computers for presentation and consists of pictures pieced together from the 95 printable (from a total of 128) characters defined by the ASCII Standard.
+%
+ASCII art was invented, in large part, because early printers often lacked graphics ability and thus, characters were used in place of graphic marks.
+%
+ASCII character set is one of the greatest inventions ever in the history of computer science.
+%
+ASCII code was first published in 1963 by the American Standards Association (ASA), which later became the American National Standards Institute (ANSI).
+%
+ASCII codes are also used in barcode systems to represent data and information.
+%
+ASCII codes are often represented using hexadecimal notation, which uses 16 possible characters (0-9 and A-F) to represent numbers.
+%
+ASCII codes are used in many common file formats, such as text files and HTML files.
+%
+ASCII codes are used to represent keyboard inputs, and are used by software to process and display user input.
+%
+ASCII has been largely replaced by Unicode, which is a much more comprehensive character encoding scheme that supports characters from virtually all languages and scripts.
+%
+ASCII is a 7-bit character encoding scheme, meaning that each character is represented by 7 bits of information. However, most modern computers use 8-bit bytes, so ASCII is often represented using 8 bits instead of 7.
+%
+ASCII is a fixed-length encoding scheme, which means that each character is represented by the same number of bits.
+%
+ASCII is an acronym that stands for American Standard Code for Information Interchange.
+%
+ASCII is case-sensitive, meaning it represents 52 upper and lower case letters from the English alphabet.
+%
+ASCII was developed from telegraph code.
+%
+ASCII was first used commercially during 1963 as a seven-bit teleprinter code for American Telephone & Telegraph's TWX (TeletypeWriter eXchange) network.
+%
+ASCII was incorporated into the Unicode (1991) character set as the first 128 symbols, so the 7-bit ASCII characters have the same numeric codes in both sets. This allows UTF-8 to be backward compatible with 7-bit ASCII.
+%
+ASCII was originally designed for telecommunication systems and was used to transmit messages over telegraph lines.
+%
+ASCII was originally designed for the English language and does not include characters from other languages. However, several extended ASCII versions were later developed to support other languages and character sets, such as ISO-8859 and Windows-1252.
+%
+ASCII was the first major character encoding standard for data processing.
+%
+ASCII was the most common character encoding on the World Wide Web until December 2007, when UTF-8 encoding surpassed it; UTF-8 is backward compatible with ASCII.
+%
+ASCII-code order is also called ASCIIbetical order.
+%
+Before ASCII was developed, different makes and models of computers could not communicate with one another.
+%
+Bits five and six will tell you which of the four ASCII groups your character is in:
+    Bit 6	Bit 5	Group
+    0	0	Control Characters
+    0	1	Digits & Punctuation
+    1	0	Upper Case & Special
+    1	1	Lower Case & Special
+%
+Despite being an American standard, ASCII does not have a code point for the cent (¢).
+%
+Extended ASCII is a repertoire of character encodings that include (most of) the original 96 ASCII character set, plus up to 128 additional characters.
+%
+Extended ASCII, as the eight-bit code is known, was introduced by IBM in 1981 for use in its first PC, and it soon became the industry standard for personal computers.
+%
+In Japan and Korea, still as of the 2020s, a variation of ASCII is used, in which the backslash (5C hex) is rendered as ¥ (a Yen sign, in Japan) or ₩ (a Won sign, in Korea).
+%
+Lowercase letters are exactly 0x20 above uppercase.
+%
+On March 11, 1968 President Lyndon B. Johnson mandated that all US federal government computers must support ASCII.
+%
+Some ASCII characters have special meanings in programming languages, such as the double quote (") and the forward slash (/).
+%
+Sometimes someone talks about a file or document in ASCII, meaning it is in plain text.
+%
+The "escape" character (ESC, code 27), was intended originally to allow sending of other control characters as literals instead of invoking their meaning, an "escape sequence".
+%
+The "space" character had to come before graphics to make sorting easier, so it became position 32.
+%
+The ASCII art is a technique of creating images and designs using ASCII characters, often used in early computer graphics and art.
+%
+The ASCII code for the "@" symbol (64) was not included in the original ASCII code and was only added in the extended ASCII versions.
+%
+The ASCII code for the backspace character (8) is still used in some programming languages and text editors.
+%
+The ASCII code for the letter "A" (65) is often used as a reference point for other character encoding schemes.
+%
+The ASCII code for the letter "a" (97) is one bit different from the code for the letter "A" (65), which allows for easy conversion between uppercase and lowercase letters.
+%
+The ASCII code for the letter "Z" (90) was used as a reference point for the Y2K bug, which was a potential issue related to the year 2000 in computer systems.
+%
+The ASCII code for the question mark (?) is 63, which is why it is often used to represent unknown or missing values in data analysis.
+%
+The ASCII code for the space character is 32, which is why it is often used as a delimiter between words and sentences.
+%
+The Backspace character can also be entered by pressing the "Backspace key" on some systems.
+%
+The extended ASCII version consists of 256 characters, which include additional special characters and symbols.
+%
+The first 128 ASCII codes are often referred to as the "ASCII table" or "ASCII chart".
+%
+The first 32 ASCII codes are non-printable control characters used for communication protocols and device control, such as carriage return, line feed, and null character.
+%
+The first 32 ASCII codes are often referred to as the "control codes" or "non-printable characters".
+%
+The first edition was launched in 1963 which didn't gain much popularity in the initial days and was revised in 1967.
+%
+The original ASCII standard used only short descriptive phrases for each control character.
+%
+The original ASCII version consisted of 128 characters, including uppercase and lowercase letters, digits, punctuation marks, and control codes.
+%
+The PETSCII code Commodore International used for their 8-bit systems is probably unique among post-1970 codes in being based on ASCII-1963, instead of the more common ASCII-1967, such as found on the ZX Spectrum computer.
+%
+The principle of Extended ASCII means that all ASCII bytes (0x00 to 0x7F) have the same meaning in all variants of extended ASCII.
+%
+US-ASCII is the IANA preferred charset name for ASCII.

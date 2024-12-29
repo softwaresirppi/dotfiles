@@ -1,0 +1,141 @@
+#!/bin/sh
+
+# COLORS
+. ./gruvbox.sh
+FG=$WHITe
+BG=$BLACK
+# USAGE: color $FG $BG text
+front_color(){
+	printf "%s" "$(tput setaf "$1")"
+}
+back_color(){
+	printf "%s" "$(tput setab "$1")"
+}
+
+# USAGE: cat ~/gruvbox.sh | palette
+palette(){
+    while IFS='=' read -r name code; do
+        if [ -n "$name" ]; then
+            printf "%s%16s%s\n" "$(tput setab "$code")" "$name" "$(tput setab 0)";
+        fi
+    done;
+}
+front_color "$FG"
+back_color "$BG"
+clear
+
+# Setting environment variables
+export EDITOR=/usr/bin/kak
+export BROWSER=/usr/bin/firefox
+export EMAIL=softwaresirppi@gmail.com
+export NAME=Sirppi
+export LC_ALL=en_IN.utf8
+export YOUTUBE_API_KEY=AIzaSyCC6U28L3mehdkpOrkDy-N8TJfmEVnrnTw
+
+# TODO: MAKE PS1 posix compliant
+if [ -t 0 ]
+then
+    ps1_fail_color="$(front_color "$red")"
+    ps1_fail='$([ "$?" -eq 0 ] || printf "[FAILED] ")'
+    ps1_machine_color="$(front_color "$orange")"
+    ps1_machine='\u@\h'
+    ps1_path_color="$(front_color "$yellow")"
+    ps1_path=' \w'
+    ps1_git_color="$(front_color "$green")"
+    ps1_git='$([ -d '.git' ] && (printf " (%s)" $(git symbolic-ref --short HEAD)))'
+    ps1_prompt_color="$(front_color "$FG")"
+    ps1_prompt='\n$ '
+    PS1="$ps1_fail_color$ps1_fail$ps1_machine_color$ps1_machine$ps1_path_color$ps1_path$ps1_git_color$ps1_git$ps1_prompt_color$ps1_prompt"
+    PS2='> '
+    PS4='+'
+fi
+
+tmux has-session -t Sirppi || tmux new -ds Sirppi
+git config --global user.email "$EMAIL"
+git config --global user.name "$NAME"
+
+# Linear Congruential Generator
+random() {
+	SEED="$(( (1103515245 * ${SEED:-$(date +%s)} + 12345) % (1 << 31) ))"
+	echo $SEED
+}
+
+edit() {
+    case $(file -i "$1") in
+        *text/*) $EDITOR "$1";;
+        *image/*) gimp "$1";;
+    esac
+}
+
+view() {
+    case $(file -i "$1") in
+        *text/html*) $BROWSER "$1";;
+        *application/pdf*|*image/vnd.djvu*) zathura "$1";;
+        *text/*) $EDITOR "$1";;
+        *audio/*|*video/*) mpv "$1";;
+        *image/*) sxiv "$1";;
+    esac
+}
+
+run() {
+    echo TODO: IMPLEMENT IT
+}
+
+user_exists() {
+    ! [ "$(eval echo ~$1)" = "~$1" ]
+}
+
+# TODO: FIX THIS HOT MESS
+vibe() { mpv --ytdl --no-video "https://www.youtube.com/watch?v=$(curl -s "https://www.googleapis.com/youtube/v3/search?part=snippet&q=$1&key=$YOUTUBE_API_KEY" | jq -r .items[].id.videoId | head -n1)"; }
+
+# TODO: REMOVE THESE
+fields() {
+    echo "$# argument(s) passed."
+    for arg
+    do echo "$arg"
+    done
+}
+
+# USAGE: match pattern string
+match() {
+    case "$2" in
+        $1) return 0;;
+        *) return 1;;
+    esac
+}
+
+# Hashmap ethukku ndren...
+dynset() {
+    name=$1
+    shift
+    value=$*
+    eval "$name"=\""$value"\"
+}
+
+dynunset() {
+    if eval "test -z \${$1+something}"
+    then return 1
+    else eval unset "$1"
+    fi
+}
+
+dynget() {
+    if eval "test -z \${$1+something}"
+    then return 1
+    else eval echo \$"$1"
+    fi
+}
+
+dupes() (
+    checksum=${1:-sha256sum}
+    while read -r file
+    do
+        test -f "$file" || continue
+        sum=$($checksum < "$file")
+        sum=${sum%% *}
+        if dynget "file_$sum" > /dev/null
+        then echo "$file:$(dynget "file_$sum")"
+        else dynset "file_$sum" "$file"
+        fi
+    done
+)
