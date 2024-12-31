@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # COLORS
-. ./gruvbox.sh
+. ~/dotfiles/gruvbox.sh
 FG=$WHITe
 BG=$BLACK
 # USAGE: color $FG $BG text
